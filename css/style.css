@@ -51,6 +51,7 @@ p{
 .hero-slides .slide{
   position:absolute;
   inset:0;
+
   background-size:cover;
   background-position:center;
   opacity:0;
@@ -83,8 +84,10 @@ p{
 }
 
 .hero-logo{
-  width:100px;
-  margin-bottom:18px;
+  width: 110px;      /* KUNCI */
+  max-width: 110px;
+  height: auto;
+  margin-bottom: 16px;
 }
 
 .hero-tagline{
@@ -238,3 +241,6 @@ footer{
   h1{font-size:30px}
   h2{font-size:24px}
 }
+.nav-logo{
+  height: 36px;
+  width: auto 
