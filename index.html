@@ -1,160 +1,73 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PT. Fattah Group | Solusi Digital Modern</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>PT. Fattah Group | Solusi Digital Modern</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<header class="header">
-  <div class="nav-wrap">
-    <div class="brand">
-      <img src="assets/logo.png" class="logo" alt="PT Fattah Group">
-      <span>FATTAH GROUP</span>
-    </div>
+<!-- NAVBAR AUTO LOAD -->
+<div id="navbar"></div>
 
-    <nav id="nav-menu">
-      <a href="#home">Home</a>
-      <a href="#about">Tentang</a>
-      <a href="#services">Layanan</a>
-      <a href="#why">Keunggulan</a>
-      <a href="#contact">Kontak</a>
-    </nav>
-
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</header>
-
-<!-- ===== HERO ===== -->
-<section id="home" class="hero">
+<!-- HERO -->
+<section class="hero">
   <div class="hero-slides">
     <div class="slide active" style="background-image:url('assets/bg1.png')"></div>
     <div class="slide" style="background-image:url('assets/bg2.png')"></div>
     <div class="slide" style="background-image:url('assets/bg3.png')"></div>
   </div>
 
-  <div class="hero-content">
-    <img src="assets/logo.png" class="hero-logo">
-    <h1>Solusi Digital Modern untuk Bisnis yang Ingin Tumbuh</h1>
-    <p class="hero-tagline">
-      Website profesional, undangan digital, dan solusi teknologi
-      yang meningkatkan kepercayaan dan citra bisnis Anda.
+  <div class="hero-content fade">
+    <img src="assets/logo.png" class="hero-logo" alt="PT Fattah Group">
+    <h1>PT. FATTAH GROUP</h1>
+    <p class="tagline">
+      Solusi Digital Modern untuk Bisnis yang Ingin Tumbuh & Terpercaya
     </p>
 
-    <div class="hero-buttons">
-      <a href="#about" class="btn btn-primary">Tentang Kami</a>
-      <a href="#services" class="btn btn-outline">Layanan</a>
+    <div class="hero-btns">
+      <a href="about.html" class="btn btn-outline">Tentang Kami</a>
+      <a href="services.html" class="btn btn-gold">Layanan Kami</a>
     </div>
   </div>
 </section>
 
-<!-- ===== TRUST ===== -->
-<section class="trust fade">
-  <div class="trust-grid">
-    <div>✔ Profesional & Transparan</div>
-    <div>✔ Desain Modern</div>
-    <div>✔ Support Responsif</div>
-    <div>✔ Solusi Custom</div>
-  </div>
-</section>
-
-<!-- ===== ABOUT ===== -->
-<section id="about" class="section fade">
-  <h2>Tentang PT. Fattah Group</h2>
+<!-- SELAMAT DATANG -->
+<section class="section fade">
+  <h2>Selamat Datang di PT. Fattah Group</h2>
   <p>
-    PT. Fattah Group adalah perusahaan layanan digital kreatif dan teknologi
-    yang berfokus pada pembuatan website profesional, undangan digital,
-    serta solusi digital modern yang efektif dan terpercaya.
-    Kami hadir sebagai mitra strategis bagi klien yang ingin berkembang
-    melalui transformasi digital.
+    Kami adalah mitra digital yang membantu individu, UMKM, hingga perusahaan
+    membangun kehadiran online yang profesional, modern, dan efektif.
   </p>
 </section>
 
-<!-- ===== SERVICES ===== -->
-<section id="services" class="section fade">
-  <h2>Layanan Kami</h2>
-
-  <div class="service-grid">
-    <div class="service-card">
-      <h3>Website Development</h3>
-      <p>
-        Website profesional yang dirancang untuk meningkatkan kredibilitas,
-        memperkuat branding, dan mendukung pertumbuhan bisnis Anda.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Undangan Digital</h3>
-      <p>
-        Undangan pernikahan dan event digital dengan desain elegan,
-        mudah dibagikan, dan mobile friendly.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Digital Creative</h3>
-      <p>
-        Desain UI/UX, branding, logo, dan konten visual
-        untuk membangun identitas digital yang kuat.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>Solusi & Maintenance</h3>
-      <p>
-        Layanan pemeliharaan, update konten,
-        dan konsultasi digital untuk keberlanjutan bisnis.
-      </p>
-    </div>
+<!-- KEUNGGULAN -->
+<section class="section dark fade">
+  <h2>Kenapa Memilih Kami?</h2>
+  <div class="grid-3">
+    <div class="card">Desain Premium & Profesional</div>
+    <div class="card">Teknologi Modern & Scalable</div>
+    <div class="card">Support Cepat & Terpercaya</div>
   </div>
 </section>
 
-<!-- ===== WHY US ===== -->
-<section id="why" class="section fade">
-  <h2>Mengapa Memilih Kami</h2>
-
-  <div class="why-grid">
-    <div>Desain modern & profesional</div>
-    <div>Teknologi up-to-date</div>
-    <div>Harga transparan</div>
-    <div>Dukungan jangka panjang</div>
-  </div>
+<!-- CTA -->
+<section class="section cta fade">
+  <h2>Siap Memulai Proyek Digital Anda?</h2>
+  <p>Konsultasi gratis dan solusi terbaik sesuai kebutuhan bisnis Anda.</p>
+  <a href="contact.html" class="btn btn-gold">Hubungi Kami</a>
 </section>
 
-<!-- ===== WORKFLOW ===== -->
-<section class="section fade">
-  <h2>Cara Kerja Kami</h2>
-  <div class="steps">
-    <div>Konsultasi</div>
-    <div>Konsep & Desain</div>
-    <div>Development</div>
-    <div>Revisi</div>
-    <div>Launch & Support</div>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<section class="cta fade">
-  <h2>Siap Mengembangkan Bisnis Anda?</h2>
-  <p>Konsultasikan kebutuhan digital Anda bersama PT. Fattah Group.</p>
-  <a href="https://wa.me/628XXXXXXXXXX" target="_blank" class="btn btn-primary">
-    Chat WhatsApp Sekarang
-  </a>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer id="contact">
-  <p>Email: info@fattahgroup.co.id | WhatsApp: 08xxxxxxxxxx</p>
-  <p>© <span id="year"></span> PT. Fattah Group</p>
+<!-- FOOTER -->
+<footer>
+  © 2025 PT. Fattah Group
 </footer>
 
-<!-- FLOATING WA -->
-<a href="https://wa.me/628XXXXXXXXXX" class="wa-float" target="_blank">💬</a>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/628xxxxxxxxxx" class="wa-float" target="_blank">
+  💬
+</a>
 
 <script src="js/script.js"></script>
 </body>
