@@ -1,0 +1,97 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#fff;color:#111;padding-top:90px}
+
+/* NAVBAR */
+.nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.65); /* transparan */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background .3s ease, box-shadow .3s ease;
+}
+.nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 28px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.logo{height:38px}
+nav{display:flex;gap:20px}
+nav a{text-decoration:none;color:#111;font-weight:500}
+nav a:hover{color:#d6b15e}
+.nav.scrolled{
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;gap:5px}
+.hamburger span{width:26px;height:3px;background:#111}
+
+/* HERO */
+.hero{position:relative;height:100vh;color:#fff;overflow:hidden}
+.hero-slides .slide{
+  position:absolute;inset:0;
+  background-size:cover;
+  background-position:center top;
+  opacity:0;
+  transform:scale(1.1);
+  transition:opacity 1.5s, transform 6s linear;
+}
+.hero-slides .active{opacity:1;transform:scale(1)}
+
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+  position:relative;z-index:2;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.hero-logo{width:90px;margin-bottom:20px}
+.tagline{max-width:600px;margin:20px auto}
+
+/* BUTTON */
+.btn{padding:14px 26px;border-radius:30px;text-decoration:none}
+.btn-gold{background:#d6b15e;color:#000}
+.btn-outline{border:2px solid #fff;color:#fff}
+.hero-btns{display:flex;gap:15px}
+
+/* SECTION */
+.section{padding:100px 20px;max-width:1000px;margin:auto;text-align:center}
+.section.dark{background:#111;color:#fff}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{padding:30px;background:#fff;color:#111;border-radius:14px}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,#000,#222);color:#fff}
+
+/* FOOTER */
+footer{text-align:center;padding:20px;background:#000;color:#fff}
+
+/* ANIMATION */
+.fade{opacity:0;transform:translateY(30px);transition:1s}
+.fade.show{opacity:1;transform:none}
+
+/* WHATSAPP */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;
+  background:#25d366;color:#fff;
+  font-size:24px;padding:14px;
+  border-radius:50%;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{display:none;position:absolute;top:70px;right:0;background:#fff;flex-direction:column;padding:20px}
+  nav.show{display:flex}
+  .hamburger{display:flex}
+}
+.why{
+  padding-top: 10px;
+}

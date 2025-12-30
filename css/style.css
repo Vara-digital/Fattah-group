@@ -1,102 +1,240 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#fff;color:#111;padding-top:90px}
-
-/* NAVBAR */
-.nav{
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.65); /* transparan */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 1000;
-  transition: background .3s ease, box-shadow .3s ease;
+/* ===== RESET & FONT ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-.nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 28px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700}
-.logo{height:38px}
-nav{display:flex;gap:20px}
-nav a{text-decoration:none;color:#111;font-weight:500}
-nav a:hover{color:#d6b15e}
-.nav.scrolled{
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-/* HAMBURGER */
-.hamburger{display:none;flex-direction:column;gap:5px}
-.hamburger span{width:26px;height:3px;background:#111}
 
-/* HERO */
-.hero{position:relative;height:100vh;color:#fff;overflow:hidden}
+body{
+  font-family:'Inter', sans-serif;
+  color:#111;
+  background:#fff;
+  padding-top:90px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1,h2,h3{
+  font-family:'Poppins', sans-serif;
+  letter-spacing:-0.4px;
+}
+
+h1{
+  font-size:38px;
+  line-height:1.2;
+}
+
+h2{
+  font-size:28px;
+  margin-bottom:16px;
+}
+
+h3{
+  font-size:16px;
+  font-weight:600;
+}
+
+p{
+  line-height:1.7;
+  color:#555;
+  max-width:800px;
+  margin:auto;
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+  color:#fff;
+}
+
 .hero-slides .slide{
-  position:absolute;inset:0;
+  position:absolute;
+  inset:0;
   background-size:cover;
-  background-position:center top;
+  background-position:center;
   opacity:0;
-  transform:scale(1.1);
-  transition:opacity 1.5s, transform 6s linear;
+  transition:opacity 1.5s ease, transform 14s linear;
 }
-.hero-slides .active{opacity:1;transform:scale(1)}
 
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background:rgba(0,0,0,.55);
+.hero-slides .slide.active{
+  opacity:1;
+  transform:scale(1.12);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,rgba(0,0,0,.6),rgba(0,0,0,.35),rgba(0,0,0,.6));
+  z-index:1;
 }
 
 .hero-content{
-  position:relative;z-index:2;
+  position:relative;
+  z-index:3;
   height:100%;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
+  padding:20px;
 }
-.hero-logo{width:90px;margin-bottom:20px}
-.tagline{max-width:600px;margin:20px auto}
 
-/* BUTTON */
-.btn{padding:14px 26px;border-radius:30px;text-decoration:none}
-.btn-gold{background:#d6b15e;color:#000}
-.btn-outline{border:2px solid #fff;color:#fff}
-.hero-btns{display:flex;gap:15px}
+.hero-logo{
+  width:100px;
+  margin-bottom:18px;
+}
 
-/* SECTION */
-.section{padding:100px 20px;max-width:1000px;margin:auto;text-align:center}
-.section.dark{background:#111;color:#fff}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{padding:30px;background:#fff;color:#111;border-radius:14px}
+.hero-tagline{
+  margin-top:12px;
+  font-size:15px;
+  opacity:.9;
+}
 
-/* CTA */
-.cta{background:linear-gradient(135deg,#000,#222);color:#fff}
+/* ===== BUTTON ===== */
+.hero-btns{
+  margin-top:30px;
+  display:flex;
+  gap:16px;
+}
 
-/* FOOTER */
-footer{text-align:center;padding:20px;background:#000;color:#fff}
-
-/* ANIMATION */
-.fade{opacity:0;transform:translateY(30px);transition:1s}
-.fade.show{opacity:1;transform:none}
-
-/* WHATSAPP */
-.wa-float{
-  position:fixed;right:20px;bottom:20px;
-  background:#25d366;color:#fff;
-  font-size:24px;padding:14px;
-  border-radius:50%;
+.btn{
+  padding:14px 28px;
+  border-radius:30px;
   text-decoration:none;
+  font-weight:600;
+  font-family:'Poppins', sans-serif;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  nav{display:none;position:absolute;top:70px;right:0;background:#fff;flex-direction:column;padding:20px}
-  nav.show{display:flex}
-  .hamburger{display:flex}
+.btn-gold{
+  background:linear-gradient(135deg,#d6b15e,#f5d98f);
+  color:#000;
 }
+
+.btn-outline{
+  border:2px solid #fff;
+  color:#fff;
+}
+
+/* ===== SECTION ===== */
+.section{
+  padding:80px 20px;
+  max-width:1000px;
+  margin:auto;
+  text-align:center;
+}
+
+.section.dark{
+  background:#111;
+  color:#fff;
+}
+
+.section.dark p{
+  color:#ddd;
+}
+
+/* ===== WHY ===== */
 .why{
-  margin-top: -40px;
+  padding-top:40px;
 }
+
+.why-grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
+}
+
+.why-card{
+  background:#fff;
+  color:#111;
+  padding:30px 20px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+  transition:.4s;
+}
+
+.why-card:hover{
+  transform:translateY(-6px);
+}
+
+.icon{
+  font-size:36px;
+  margin-bottom:10px;
+  display:block;
+}
+
+/* ===== CTA ===== */
+.cta{
+  background:linear-gradient(135deg,#000,#222);
+  color:#fff;
+  padding:80px 20px;
+  text-align:center;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#000;
+  color:#fff;
+  font-size:14px;
+}
+
+/* ===== ANIMATION ===== */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
+
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s;
+}
+.fade-up.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== HERO ANIM ===== */
+.hero-anim{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.9s;
+}
+.hero-anim.show{
+  opacity:1;
+  transform:none;
+}
+
+/* ===== WHATSAPP ===== */
+.wa-float{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  background:#25d366;
+  color:#fff;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  text-decoration:none;
+  z-index:9999;
+}
+
+/* ===== MOBILE ===== */
 @media(max-width:768px){
-  .why{
-    padding-top: 20px;
-  }
+  h1{font-size:30px}
+  h2{font-size:24px}
 }
