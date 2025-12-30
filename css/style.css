@@ -2,14 +2,26 @@
 body{background:#fff;color:#111;padding-top:90px}
 
 /* NAVBAR */
-.nav{position:fixed;top:0;width:100%;background:#fff;z-index:1000}
+.nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.65); /* transparan */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background .3s ease, box-shadow .3s ease;
+}
 .nav-wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 28px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .logo{height:38px}
 nav{display:flex;gap:20px}
 nav a{text-decoration:none;color:#111;font-weight:500}
 nav a:hover{color:#d6b15e}
-
+.nav.scrolled{
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
 /* HAMBURGER */
 .hamburger{display:none;flex-direction:column;gap:5px}
 .hamburger span{width:26px;height:3px;background:#111}

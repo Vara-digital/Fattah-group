@@ -35,3 +35,13 @@ setInterval(()=>{
   index=(index+1)%slides.length;
   slides[index].classList.add("active");
 },6000);
+// NAVBAR SCROLL EFFECT
+window.addEventListener("scroll", ()=>{
+  const nav = document.querySelector(".nav");
+  if(window.scrollY > 60){
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+
