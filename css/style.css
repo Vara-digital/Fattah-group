@@ -19,7 +19,7 @@ nav a:hover{color:#d6b15e}
 .hero-slides .slide{
   position:absolute;inset:0;
   background-size:cover;
-  background-position:center;
+  background-position:center top;
   opacity:0;
   transform:scale(1.1);
   transition:opacity 1.5s, transform 6s linear;
