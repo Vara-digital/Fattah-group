@@ -92,3 +92,11 @@ footer{text-align:center;padding:20px;background:#000;color:#fff}
   nav.show{display:flex}
   .hamburger{display:flex}
 }
+.why{
+  margin-top: -40px;
+}
+@media(max-width:768px){
+  .why{
+    padding-top: 20px;
+  }
+}
