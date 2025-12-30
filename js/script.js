@@ -36,3 +36,18 @@ document.querySelectorAll(".fade,.slide").forEach(el=>observer.observe(el));
 document.querySelectorAll("footer").forEach(f=>{
   f.innerHTML = `© ${new Date().getFullYear()} PT. Fattah Group`;
 });
+/* =========================
+   HERO BACKGROUND SLIDER
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".hero-slides .slide");
+  if (!slides.length) return;
+
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 4000); // 4 detik
+});
