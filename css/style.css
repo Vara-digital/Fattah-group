@@ -10,21 +10,45 @@ body{
   color:#111;
 }
 
-/* NAVBAR */
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:rgba(255,255,255,.85);
-  backdrop-filter: blur(10px);
-  z-index:1000;
+/* NAVBAR FIX */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
 }
+
+.nav-wrap {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+
+.nav-logo {
+  height: 36px;
+  width: auto;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+}}
 
 /* HERO */
 .hero{
   position:relative;
   height:100vh;
-  padding-top:80px;
   overflow:hidden;
   color:#fff;
 }
