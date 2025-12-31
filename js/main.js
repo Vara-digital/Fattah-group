@@ -1,27 +1,40 @@
-/* LOAD NAVBAR */
+/* =========================
+   LOAD NAVBAR
+========================= */
 fetch("navbar.html")
   .then(res => res.text())
-  .then(data => document.getElementById("navbar").innerHTML = data);
+  .then(data => {
+    const nav = document.getElementById("navbar");
+    if(nav) nav.innerHTML = data;
+  });
 
-/* HERO SLIDER */
+/* =========================
+   HERO SLIDER
+========================= */
 const slides = document.querySelectorAll(".slide");
 let index = 0;
 
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 6000);
+if(slides.length > 1){
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 6000);
+}
 
-/* NAVBAR SHRINK */
+/* =========================
+   NAVBAR SHRINK
+========================= */
 window.addEventListener("scroll", () => {
   const nav = document.querySelector(".nav");
   if(nav){
-    nav.classList.toggle("shrink", window.scrollY > 50);
+    nav.classList.toggle("shrink", window.scrollY > 60);
   }
 });
 
-/* SCROLL ANIMATION */
+/* =========================
+   SCROLL ANIMATION
+========================= */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -30,3 +43,4 @@ const observer = new IntersectionObserver(entries => {
   });
 },{threshold:0.2});
 
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
