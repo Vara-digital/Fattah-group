@@ -1,6 +1,4 @@
-/* =========================
-   RESET & BASE
-========================= */
+/* RESET */
 *{
   margin:0;
   padding:0;
@@ -8,33 +6,25 @@
   font-family:'Poppins',sans-serif;
 }
 
-html,body{
-  width:100%;
-  overflow-x:hidden;
-}
-
 body{
   background:#fff;
   color:#111;
+  overflow-x:hidden;
 }
 
-/* =========================
-   NAVBAR (GLASS + SHRINK)
-========================= */
+/* NAVBAR */
 .nav{
   position:fixed;
   top:0;
-  left:0;
   width:100%;
   z-index:1000;
-  background:rgba(255,255,255,.85);
+  background:rgba(255,255,255,.88);
   backdrop-filter:blur(12px);
-  transition:all .35s ease;
+  transition:.35s ease;
 }
 
 .nav.shrink{
-  background:rgba(255,255,255,.95);
-  box-shadow:0 8px 30px rgba(0,0,0,.08);
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
 
 .nav-wrap{
@@ -42,13 +32,8 @@ body{
   margin:auto;
   padding:16px 20px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  transition:padding .35s ease;
-}
-
-.nav.shrink .nav-wrap{
-  padding:10px 20px;
+  align-items:center;
 }
 
 .nav-logo{
@@ -56,35 +41,17 @@ body{
 }
 
 nav a{
-  margin-left:24px;
+  margin-left:22px;
   text-decoration:none;
   color:#111;
   font-weight:500;
-  position:relative;
 }
 
-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0;
-  height:2px;
-  background:#d6b15e;
-  transition:.3s;
-}
-
-nav a:hover::after{
-  width:100%;
-}
-
-/* =========================
-   HERO (CINEMATIC SLIDER)
-========================= */
+/* HERO */
 .hero{
   position:relative;
-  height:100vh;
-  width:100%;
+  min-height:100svh;
+  padding-top:80px;
   overflow:hidden;
   color:#fff;
 }
@@ -92,7 +59,6 @@ nav a:hover::after{
 .hero-slides{
   position:absolute;
   inset:0;
-  z-index:0;
 }
 
 .hero-slides .slide{
@@ -101,8 +67,8 @@ nav a:hover::after{
   background-size:cover;
   background-position:center;
   opacity:0;
-  transform:scale(1.12);
-  transition:opacity 1.6s ease, transform 7s linear;
+  transform:scale(1.15);
+  transition:opacity 1.6s ease, transform 8s linear;
 }
 
 .hero-slides .active{
@@ -115,7 +81,6 @@ nav a:hover::after{
   position:absolute;
   inset:0;
   background:rgba(0,0,0,.55);
-  z-index:1;
 }
 
 .hero-content{
@@ -127,7 +92,6 @@ nav a:hover::after{
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:20px;
 }
 
 .hero-logo{
@@ -137,16 +101,12 @@ nav a:hover::after{
 
 .hero h1{
   font-size:38px;
-  font-weight:700;
-  letter-spacing:.5px;
   text-shadow:0 10px 40px rgba(0,0,0,.6);
 }
 
 .tagline{
-  max-width:640px;
+  max-width:620px;
   margin:18px auto;
-  line-height:1.6;
-  text-shadow:0 4px 20px rgba(0,0,0,.6);
 }
 
 .hero-buttons{
@@ -155,9 +115,7 @@ nav a:hover::after{
   margin-top:24px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTON */
 .btn-gold{
   padding:14px 30px;
   background:#d6b15e;
@@ -165,12 +123,6 @@ nav a:hover::after{
   border-radius:30px;
   text-decoration:none;
   font-weight:600;
-  transition:.3s;
-}
-
-.btn-gold:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 30px rgba(214,177,94,.5);
 }
 
 .btn-outline{
@@ -179,23 +131,16 @@ nav a:hover::after{
   color:#fff;
   border-radius:30px;
   text-decoration:none;
-  font-weight:500;
-  transition:.3s;
 }
 
-.btn-outline:hover{
-  background:#fff;
-  color:#000;
-}
-
-/* =========================
-   SECTION
-========================= */
+/* SECTION */
 .section{
   padding:100px 20px;
   max-width:1100px;
   margin:auto;
   text-align:center;
+  position:relative;
+  z-index:2;
 }
 
 .section-dark{
@@ -203,14 +148,6 @@ nav a:hover::after{
   color:#fff;
 }
 
-.section h2{
-  font-size:32px;
-  margin-bottom:20px;
-}
-
-/* =========================
-   GRID / CARD
-========================= */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -221,24 +158,11 @@ nav a:hover::after{
 .card{
   background:#fff;
   color:#111;
-  padding:34px 26px;
+  padding:32px;
   border-radius:18px;
-  transition:.35s ease;
 }
 
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 40px rgba(0,0,0,.12);
-}
-
-.card .icon{
-  font-size:38px;
-  margin-bottom:14px;
-}
-
-/* =========================
-   CTA
-========================= */
+/* CTA */
 .cta{
   background:linear-gradient(135deg,#000,#222);
   color:#fff;
@@ -246,28 +170,15 @@ nav a:hover::after{
   text-align:center;
 }
 
-.cta h2{
-  font-size:32px;
-}
-
-.cta p{
-  margin:12px 0 24px;
-}
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 footer{
   text-align:center;
   padding:22px;
   background:#000;
   color:#fff;
-  font-size:14px;
 }
 
-/* =========================
-   WHATSAPP FLOAT
-========================= */
+/* WHATSAPP */
 .wa-float{
   position:fixed;
   bottom:20px;
@@ -277,38 +188,23 @@ footer{
   font-size:26px;
   padding:16px;
   border-radius:50%;
-  text-decoration:none;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
   z-index:1000;
 }
 
-/* =========================
-   ANIMATION (SCROLL)
-========================= */
+/* ANIMATION */
 .fade{
   opacity:0;
   transform:translateY(30px);
   transition:1s ease;
 }
-
 .fade.show{
   opacity:1;
   transform:none;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* MOBILE */
 @media(max-width:768px){
-  .hero h1{
-    font-size:28px;
-  }
-
-  nav{
-    display:none;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-  }
+  .hero h1{font-size:28px}
+  .hero-buttons{flex-direction:column}
 }
+
