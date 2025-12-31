@@ -1,4 +1,5 @@
-{
+/* RESET */
+*{
   margin:0;
   padding:0;
   box-sizing:border-box;
@@ -8,47 +9,48 @@
 body{
   background:#fff;
   color:#111;
+  overflow-x:hidden;
 }
 
-/* NAVBAR FIX */
-.nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(12px);
+/* NAVBAR */
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(12px);
+  transition:.4s ease;
 }
 
-.nav-wrap {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
+.nav.shrink{
+  padding:6px 0;
+  background:rgba(255,255,255,.95);
 }
 
-.nav-logo {
-  height: 36px;
-  width: auto;
+.nav-wrap{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #111;
-  font-weight: 500;
+.nav-logo{height:36px}
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#111;
+  font-weight:500;
 }
-
-.hamburger {
-  display: none;
-}}
 
 /* HERO */
 .hero{
   position:relative;
   height:100vh;
+  width:100vw;
+  margin-left:calc(-50vw + 50%);
   overflow:hidden;
   color:#fff;
 }
@@ -73,6 +75,7 @@ nav a {
   position:absolute;
   inset:0;
   background:rgba(0,0,0,.55);
+  z-index:1;
 }
 
 .hero-content{
@@ -94,11 +97,13 @@ nav a {
 
 .hero h1{
   font-size:36px;
+  text-shadow:0 10px 40px rgba(0,0,0,.7);
 }
 
 .tagline{
   max-width:600px;
   margin:16px auto;
+  text-shadow:0 4px 20px rgba(0,0,0,.6);
 }
 
 .hero-buttons{
@@ -127,7 +132,7 @@ nav a {
 
 /* SECTION */
 .section{
-  padding:90px 20px;
+  padding:100px 20px;
   max-width:1100px;
   margin:auto;
   text-align:center;
@@ -150,11 +155,6 @@ nav a {
   color:#111;
   padding:30px;
   border-radius:16px;
-}
-
-.card .icon{
-  font-size:36px;
-  margin-bottom:10px;
 }
 
 /* CTA */
@@ -183,7 +183,6 @@ footer{
   font-size:26px;
   padding:16px;
   border-radius:50%;
-  text-decoration:none;
   z-index:1000;
 }
 
@@ -191,9 +190,8 @@ footer{
 .fade{
   opacity:0;
   transform:translateY(30px);
-  transition:1s;
+  transition:1s ease;
 }
-
 .fade.show{
   opacity:1;
   transform:none;
@@ -202,4 +200,5 @@ footer{
 /* MOBILE */
 @media(max-width:768px){
   .hero h1{font-size:28px}
+  nav{display:none}
 }

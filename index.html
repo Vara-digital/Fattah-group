@@ -2,49 +2,40 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>PT. Fattah Group | Solusi Digital Modern</title>
+  <title>PT. Fattah Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- NAVBAR AUTO LOAD -->
+<!-- NAVBAR LOAD -->
 <div id="navbar"></div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-slides">
-    <div class="slide active" style="background-image:url('assets/bg1.png')"></div>
-    <div class="slide" style="background-image:url('assets/bg2.png')"></div>
-    <div class="slide" style="background-image:url('assets/bg3.png')"></div>
+    <div class="slide active" style="background-image:url('assets/hero1.jpg')"></div>
+    <div class="slide" style="background-image:url('assets/hero2.jpg')"></div>
+    <div class="slide" style="background-image:url('assets/hero3.jpg')"></div>
   </div>
 
-  <div class="hero-content fade">
-    <img src="assets/logo.png" class="hero-logo" alt="PT Fattah Group">
-    <h1>PT. FATTAH GROUP</h1>
-    <p class="tagline">
+  <div class="hero-content">
+    <img src="assets/logo.png" class="hero-logo fade" alt="Fattah Group">
+    <h1 class="fade">PT. FATTAH GROUP</h1>
+    <p class="tagline fade">
       Solusi Digital Modern untuk Bisnis yang Ingin Tumbuh & Terpercaya
     </p>
 
-    <div class="hero-buttons">
+    <div class="hero-buttons fade">
       <a href="about.html" class="btn-outline">Tentang Kami</a>
       <a href="services.html" class="btn-gold">Layanan Kami</a>
     </div>
   </div>
-</section>
-
-<!-- WELCOME -->
-<section class="section fade">
-  <h2>Selamat Datang di PT. Fattah Group</h2>
-  <p>
-    Kami membantu individu, UMKM, hingga perusahaan membangun kehadiran digital
-    yang profesional, modern, dan berorientasi pada hasil.
-  </p>
 </section>
 
 <!-- WHY US -->
@@ -53,27 +44,27 @@
 
   <div class="grid">
     <div class="card fade">
-      <span class="icon">🎨</span>
+      <div class="icon">🎨</div>
       <h3>Desain Premium</h3>
-      <p>Tampilan profesional yang meningkatkan kepercayaan klien.</p>
+      <p>Tampilan modern, profesional, dan membangun kepercayaan.</p>
     </div>
 
     <div class="card fade">
-      <span class="icon">⚙️</span>
+      <div class="icon">⚙️</div>
       <h3>Teknologi Modern</h3>
-      <p>Website cepat, aman, dan scalable untuk jangka panjang.</p>
+      <p>Website cepat, scalable, dan siap berkembang.</p>
     </div>
 
     <div class="card fade">
-      <span class="icon">🚀</span>
+      <div class="icon">🎯</div>
       <h3>Fokus Hasil</h3>
-      <p>Solusi digital yang benar-benar membantu bisnis berkembang.</p>
+      <p>Bukan sekadar bagus, tapi menghasilkan.</p>
     </div>
 
     <div class="card fade">
-      <span class="icon">🤝</span>
+      <div class="icon">🤝</div>
       <h3>Support Terpercaya</h3>
-      <p>Respon cepat & pendampingan profesional.</p>
+      <p>Respons cepat & pendampingan berkelanjutan.</p>
     </div>
   </div>
 </section>
@@ -81,7 +72,7 @@
 <!-- CTA -->
 <section class="cta fade">
   <h2>Siap Memulai Proyek Digital Anda?</h2>
-  <p>Konsultasi gratis dan solusi terbaik sesuai kebutuhan bisnis Anda</p>
+  <p>Konsultasi gratis & solusi terbaik untuk bisnis Anda</p>
   <a href="contact.html" class="btn-gold">Hubungi Kami</a>
 </section>
 
@@ -90,10 +81,18 @@
   © 2025 PT. Fattah Group
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/628xxxxxxxxxx" class="wa-float" target="_blank">💬</a>
+<!-- WHATSAPP -->
+<a href="https://wa.me/628xxxxxxxxxx" class="wa-float">💬</a>
 
 <!-- JS -->
-<script src="js/script.js"></script>
+<script src="js/main.js"></script>
+
+<!-- NAVBAR SCRIPT -->
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("navbar").innerHTML = data);
+</script>
+
 </body>
 </html>
