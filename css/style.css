@@ -444,3 +444,39 @@ footer{
   margin-bottom:10px;
 }
 
+/* FILTER BUTTON */
+.filter-btns{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:40px;
+}
+
+.filter-btns button{
+  padding:10px 20px;
+  border:none;
+  border-radius:30px;
+  background:#eee;
+  cursor:pointer;
+  font-weight:500;
+  transition:.3s;
+}
+
+.filter-btns button.active,
+.filter-btns button:hover{
+  background:#d6b15e;
+  color:#000;
+}
+
+/* PORTFOLIO FILTER EFFECT */
+.portfolio-card{
+  transition:.4s ease;
+}
+
+.portfolio-card.hide{
+  opacity:0;
+  transform:scale(.95);
+  pointer-events:none;
+  display:none;
+}

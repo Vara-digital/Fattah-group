@@ -46,3 +46,27 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+/* =========================
+   PORTFOLIO FILTER
+========================= */
+const filterBtns = document.querySelectorAll(".filter-btns button");
+const portfolioItems = document.querySelectorAll(".portfolio-card");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+
+    portfolioItems.forEach(item => {
+      if(filter === "all" || item.dataset.category === filter){
+        item.classList.remove("hide");
+      }else{
+        item.classList.add("hide");
+      }
+    });
+
+  });
+});
