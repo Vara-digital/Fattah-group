@@ -465,3 +465,94 @@ MOBILE FIX
     grid-column:1;
   }
 }
+/* ===============================
+FIX TOTAL GLOBAL LAYOUT
+=============================== */
+
+/* NAVBAR OFFSET */
+body{
+  padding-top:80px;
+}
+
+/* ===============================
+HOME HERO (KHUSUS INDEX)
+=============================== */
+.home-hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ===============================
+PAGE HERO (ABOUT, SERVICE, CONTACT)
+=============================== */
+.page-hero{
+  padding:100px 20px 80px;
+  background:#0b0b0b;
+  text-align:center;
+}
+
+.page-hero h1{
+  font-size:36px;
+  color:#fff;
+}
+
+.page-hero p{
+  color:#ccc;
+  max-width:720px;
+  margin:10px auto 0;
+}
+
+/* ===============================
+RESET SECTION (GLOBAL)
+=============================== */
+.section{
+  min-height:auto !important;
+  display:block !important;
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ===============================
+TEXT FIX
+=============================== */
+.section h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.section p{
+  max-width:900px;
+  margin:0 auto 30px;
+  line-height:1.8;
+}
+
+/* ===============================
+GRID FIX
+=============================== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+/* ===============================
+MOBILE FIX
+=============================== */
+@media(max-width:768px){
+
+  .home-hero{
+    min-height:auto;
+    padding:120px 20px;
+  }
+
+  .page-hero h1{
+    font-size:28px;
+  }
+
+  .section{
+    padding:60px 16px;
+  }
+}
