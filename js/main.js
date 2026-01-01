@@ -1,12 +1,10 @@
 /* =========================
    LOAD NAVBAR
 ========================= */
-fetch("navbar.html")
+fetch("../navbar.html")
   .then(res => res.text())
   .then(data => {
-    const nav = document.getElementById("navbar");
-    if(nav) nav.innerHTML = data;
-  });
+    document.getElementById("navbar").innerHTML = data;
 
 /* =========================
    HERO SLIDER
