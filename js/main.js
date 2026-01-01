@@ -1,12 +1,11 @@
 /* =========================
    LOAD NAVBAR
 ========================= */
-fetch("../navbar.html")
+fetch("navbar.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
-  })
-  .catch(err => console.error("Navbar error:", err));
+  });
 
 /* =========================
    HERO SLIDER
@@ -47,4 +46,3 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".fade").forEach(el => observer.observe(el));
-
