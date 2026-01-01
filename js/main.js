@@ -70,25 +70,4 @@ filterBtns.forEach(btn => {
 
   });
 });
-/* =========================
-   PORTFOLIO FILTER
-========================= */
-const filterButtons = document.querySelectorAll(".filter-btn");
-const portfolioItems = document.querySelectorAll(".portfolio-item");
 
-filterButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    // reset active
-    filterButtons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    const filter = btn.dataset.filter;
-
-    portfolioItems.forEach(item => {
-      item.classList.remove("show");
-      if(item.classList.contains(filter)){
-        item.classList.add("show");
-      }
-    });
-  });
-});
