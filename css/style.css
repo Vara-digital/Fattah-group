@@ -480,3 +480,27 @@ footer{
   pointer-events:none;
   display:none;
 }
+/* CONTACT FORM */
+.contact-form{
+  max-width:600px;
+  margin:40px auto 0;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:14px 18px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  font-family:'Poppins',sans-serif;
+  font-size:14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:#d6b15e;
+}
+
