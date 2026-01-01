@@ -24,52 +24,93 @@ body{
 .nav{
   position:fixed;
   top:0;
-  left:0;
   width:100%;
-  z-index:1000;
   background:rgba(255,255,255,.9);
   backdrop-filter:blur(12px);
-  transition:.35s ease;
-}
-
-.nav.shrink{
-  box-shadow:0 10px 30px rgba(0,0,0,.1);
+  z-index:1000;
 }
 
 .nav-wrap{
   max-width:1200px;
   margin:auto;
-  padding:16px 20px;
+  padding:14px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
-.nav-logo{
-  height:36px;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
 }
 
-nav a{
+.nav-logo{
+  height:34px;
+}
+
+/* MENU DESKTOP */
+#nav-menu{
+  display:flex;
+}
+
+#nav-menu a{
   margin-left:22px;
   text-decoration:none;
   color:#111;
   font-weight:500;
-  position:relative;
 }
 
-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0;
-  height:2px;
-  background:#d6b15e;
+/* =========================
+   HAMBURGER
+========================= */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:26px;
+  height:3px;
+  background:#111;
+  border-radius:2px;
   transition:.3s;
 }
 
-nav a:hover::after{
-  width:100%;
+/* =========================
+   MOBILE MODE
+========================= */
+@media(max-width:768px){
+
+  /* MENU MOBILE */
+  #nav-menu{
+    position:absolute;
+    top:64px;
+    left:0;
+    width:100%;
+    background:#fff;
+    flex-direction:column;
+    text-align:center;
+    padding:20px 0;
+    display:none;
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+  }
+
+  #nav-menu a{
+    margin:14px 0;
+    font-size:18px;
+  }
+
+  #nav-menu.active{
+    display:flex;
+  }
+
+  .hamburger{
+    display:flex;
+  }
 }
 
 /* =========================
@@ -289,4 +330,58 @@ footer{
 @media(max-width:768px){
   .hero h1{font-size:28px}
   .hero-buttons{flex-direction:column}
+}
+/* PAGE HERO */
+.page-hero{
+  padding:140px 20px 80px;
+  background:linear-gradient(135deg,#0b0b0b,#1a1a1a);
+  color:#fff;
+  text-align:center;
+}
+
+.page-hero-content{
+  max-width:720px;
+  margin:auto;
+}
+
+.page-hero h1{
+  font-size:42px;
+  margin-bottom:14px;
+}
+
+/* SECTION DESC */
+.section-desc{
+  max-width:820px;
+  margin:16px auto;
+  line-height:1.7;
+  color:#444;
+}
+
+/* SOFT SECTION */
+.section-soft{
+  background:#f7f7f7;
+}
+
+/* VISION MISSION */
+.vm-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.vm-card{
+  background:#fff;
+  padding:34px;
+  border-radius:18px;
+}
+
+/* DARK CARD FIX */
+.section-dark .card.light{
+  background:#fff;
+  color:#111;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .page-hero h1{font-size:30px}
 }
