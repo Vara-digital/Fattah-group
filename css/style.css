@@ -504,3 +504,51 @@ footer{
   border-color:#d6b15e;
 }
 
+/* PORTFOLIO FILTER */
+.portfolio-filter{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:30px 0;
+}
+
+.filter-btn{
+  padding:12px 22px;
+  border-radius:30px;
+  border:1px solid #ddd;
+  background:#fff;
+  cursor:pointer;
+  font-weight:500;
+}
+
+.filter-btn.active{
+  background:#d6b15e;
+  color:#000;
+  border-color:#d6b15e;
+}
+
+/* PORTFOLIO GRID */
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+  margin-top:30px;
+}
+
+/* HIDE ALL BY DEFAULT */
+.portfolio-item{
+  display:none;
+}
+
+.portfolio-item.show{
+  display:block;
+}
+
+/* CARD */
+.portfolio-card{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.06);
+}
