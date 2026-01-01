@@ -16,94 +16,116 @@
 <!-- NAVBAR -->
 <div id="navbar"></div>
 
-<!-- HERO PORTFOLIO -->
+<!-- PAGE HERO -->
 <section class="page-hero">
   <div class="page-hero-content fade">
     <h1>Portofolio Kami</h1>
     <p>
-      Beberapa proyek digital yang telah kami kerjakan
+      Beberapa hasil karya digital yang telah kami kerjakan
     </p>
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="section fade">
-  <h2>Proyek Pilihan</h2>
-  <p class="section-desc">
-    Berikut adalah beberapa contoh proyek yang pernah kami tangani,
-    mulai dari website perusahaan, landing page, hingga undangan digital.
-    Setiap proyek dirancang dengan pendekatan profesional, modern,
-    dan berorientasi pada kebutuhan klien.
-  </p>
-</section>
+<!-- PORTFOLIO SECTION -->
+<section class="portfolio">
+  <div class="portfolio-container">
 
-<!-- PORTFOLIO GRID -->
-<section class="section fade">
-  <h2>Portfolio Kami</h2>
-  <p class="section-desc">
-    Pilih kategori untuk melihat hasil karya kami
-  </p>
+    <!-- HEADER -->
+    <div class="portfolio-header fade">
+      <h2>Proyek Pilihan</h2>
+      <p>
+        Pilih kategori untuk melihat hasil karya kami sesuai kebutuhan Anda.
+      </p>
+    </div>
 
-  <!-- FILTER BUTTON -->
-  <div class="portfolio-filter">
-    <button class="filter-btn active" data-filter="website">Website</button>
-    <button class="filter-btn" data-filter="landing">Landing Page</button>
-    <button class="filter-btn" data-filter="undangan">Undangan</button>
-    <button class="filter-btn" data-filter="branding">Branding</button>
+    <!-- FILTER BUTTON -->
+    <div class="portfolio-filter fade">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="website">Website</button>
+      <button class="filter-btn" data-filter="landing">Landing Page</button>
+      <button class="filter-btn" data-filter="undangan">Undangan Digital</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
+    </div>
+
+    <!-- GRID -->
+    <div class="portfolio-grid fade">
+
+      <!-- WEBSITE -->
+      <div class="portfolio-item" data-category="website">
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">Website</div>
+          <div class="portfolio-content">
+            <h3>Company Profile</h3>
+            <p>Website perusahaan profesional dan terpercaya.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="website">
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">Website</div>
+          <div class="portfolio-content">
+            <h3>Corporate Website</h3>
+            <p>Website bisnis modern dan responsive.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LANDING -->
+      <div class="portfolio-item" data-category="landing">
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">Landing</div>
+          <div class="portfolio-content">
+            <h3>Landing Page Produk</h3>
+            <p>Landing page fokus konversi & penjualan.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNDANGAN -->
+      <div class="portfolio-item" data-category="undangan">
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">Undangan</div>
+          <div class="portfolio-content">
+            <h3>Undangan Pernikahan Digital</h3>
+            <p>Undangan online modern & interaktif.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="undangan">
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">Undangan</div>
+          <div class="portfolio-content">
+            <h3>Undangan Event</h3>
+            <p>Undangan digital untuk acara & event.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRANDING -->
+      <div class="portfolio-item" data-category="branding">
+        <div class="portfolio-card">
+          <div class="portfolio-thumb">Branding</div>
+          <div class="portfolio-content">
+            <h3>Brand Identity</h3>
+            <p>Logo & identitas visual profesional.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="portfolio-cta fade">
+      <h3>Ingin Proyek Anda Masuk Portofolio Kami?</h3>
+      <p>
+        Konsultasikan kebutuhan digital Anda bersama tim profesional kami
+      </p>
+      <a href="contact.html">Hubungi Kami</a>
+    </div>
+
   </div>
-
-  <!-- PORTFOLIO GRID -->
-  <div class="portfolio-grid">
-
-    <!-- WEBSITE -->
-    <div class="portfolio-item website">
-      <div class="portfolio-card">
-        <h3>Company Profile</h3>
-        <p>Website perusahaan profesional</p>
-      </div>
-    </div>
-
-    <div class="portfolio-item website">
-      <div class="portfolio-card">
-        <h3>Corporate Website</h3>
-        <p>Website bisnis skala menengah</p>
-      </div>
-    </div>
-
-    <!-- LANDING -->
-    <div class="portfolio-item landing">
-      <div class="portfolio-card">
-        <h3>Landing Produk</h3>
-        <p>Landing page fokus konversi</p>
-      </div>
-    </div>
-
-    <!-- UNDANGAN -->
-    <div class="portfolio-item undangan">
-      <div class="portfolio-card">
-        <h3>Undangan Digital</h3>
-        <p>Undangan online modern</p>
-      </div>
-    </div>
-
-    <!-- BRANDING -->
-    <div class="portfolio-item branding">
-      <div class="portfolio-card">
-        <h3>Brand Identity</h3>
-        <p>Logo & identitas visual</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta fade">
-  <h2>Ingin Proyek Anda Masuk Portofolio Kami?</h2>
-  <p>
-    Konsultasikan kebutuhan digital Anda bersama tim profesional kami
-  </p>
-  <a href="contact.html" class="btn-gold">Hubungi Kami</a>
 </section>
 
 <!-- FOOTER -->
