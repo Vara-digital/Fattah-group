@@ -17,12 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =============================================
-     HERO SLIDER (HANYA JIKA ADA SLIDE)
+     HERO SLIDER (HANYA JIKA ADA)
   ============================================= */
-  const slides = document.querySelectorAll(".slide");
+  const slides = document.querySelectorAll(".hero-slides .slide");
   let slideIndex = 0;
 
   if (slides.length > 1) {
+    slides[0].classList.add("active");
+
     setInterval(() => {
       slides[slideIndex].classList.remove("active");
       slideIndex = (slideIndex + 1) % slides.length;
@@ -31,16 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =============================================
-     PORTFOLIO FILTER (SAFE VERSION)
+     PORTFOLIO FILTER (SAFE & HALUS)
   ============================================= */
   const filterButtons = document.querySelectorAll(".filter-btn");
   const portfolioItems = document.querySelectorAll(".portfolio-item");
 
   if (filterButtons.length && portfolioItems.length) {
+
+    // tampilkan semua pertama kali
+    portfolioItems.forEach(item => item.classList.add("show"));
+
     filterButtons.forEach(btn => {
       btn.addEventListener("click", () => {
 
-        // set active button
+        // active button
         filterButtons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
 
@@ -50,9 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
           const category = item.dataset.category;
 
           if (filter === "all" || category === filter) {
-            item.style.display = "block";
+            item.classList.add("show");
             item.style.opacity = "0";
-            item.style.transform = "translateY(30px)";
+            item.style.transform = "translateY(20px)";
 
             requestAnimationFrame(() => {
               item.style.transition = "opacity .4s ease, transform .4s ease";
@@ -61,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
           } else {
-            item.style.display = "none";
+            item.classList.remove("show");
           }
         });
 
@@ -70,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =============================================
-     SCROLL ANIMATION (FADE)
+     SCROLL FADE ANIMATION
   ============================================= */
   const fadeElements = document.querySelectorAll(".fade");
 
@@ -92,8 +98,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ============================================= */
   window.addEventListener("scroll", () => {
     const nav = document.querySelector(".nav");
-    if (nav) {
-      nav.classList.toggle("shrink", window.scrollY > 60);
+    if (!nav) return;
+
+    if (window.scrollY > 60) {
+      nav.classList.add("shrink");
+    } else {
+      nav.classList.remove("shrink");
     }
   });
 
@@ -105,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleMenu() {
   const menu = document.getElementById("nav-menu");
   if (menu) {
-    menu.classList.toggle("open");
+    menu.classList.toggle("active");
   }
 }
+
