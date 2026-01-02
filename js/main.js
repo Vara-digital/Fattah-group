@@ -2,7 +2,19 @@
    DOM READY
 ================================================= */
 document.addEventListener("DOMContentLoaded", () => {
+/* =========================
+   ACTIVE MENU AUTO
+========================= */
+const currentPage = location.pathname.split("/").pop() || "index.html";
+const navLinks = document.querySelectorAll("#nav-menu a");
 
+navLinks.forEach(link => {
+  const linkPage = link.getAttribute("href");
+
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
   /* =============================================
      LOAD NAVBAR (SEMUA HALAMAN)
   ============================================= */
