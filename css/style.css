@@ -17,7 +17,18 @@ body{
   background:#fff;
   color:#111;
 }
+/* =========================
+   NAVBAR OFFSET (WAJIB)
+========================= */
+body{
+  padding-top:72px;
+}
 
+@media(max-width:768px){
+  body{
+    padding-top:64px;
+  }
+}
 /* =========================
    NAVBAR
 ========================= */
