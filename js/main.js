@@ -1,133 +1,98 @@
-/* =================================================
-   DOM READY
-================================================= */
 document.addEventListener("DOMContentLoaded", () => {
-/* =========================
-   ACTIVE MENU AUTO
-========================= */
-const currentPage = location.pathname.split("/").pop() || "index.html";
-const navLinks = document.querySelectorAll("#nav-menu a");
 
-navLinks.forEach(link => {
-  const linkPage = link.getAttribute("href");
+  /* =========================
+     ACTIVE MENU
+  ========================= */
+  const currentPage = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll("#nav-menu a").forEach(link=>{
+    if(link.getAttribute("href") === currentPage){
+      link.classList.add("active");
+    }
+  });
 
-  if (linkPage === currentPage) {
-    link.classList.add("active");
-  }
-});
-  /* =============================================
-     LOAD NAVBAR (SEMUA HALAMAN)
-  ============================================= */
-  const navbarContainer = document.getElementById("navbar");
-  if (navbarContainer) {
+  /* =========================
+     LOAD NAVBAR
+  ========================= */
+  const navbar = document.getElementById("navbar");
+  if(navbar){
     fetch("navbar.html")
-      .then(res => res.text())
-      .then(data => {
-        navbarContainer.innerHTML = data;
-      })
-      .catch(err => console.error("Navbar load error:", err));
+      .then(res=>res.text())
+      .then(html=>navbar.innerHTML = html);
   }
 
-  /* =============================================
-     HERO SLIDER (HANYA JIKA ADA)
-  ============================================= */
+  /* =========================
+     HERO SLIDER
+  ========================= */
   const slides = document.querySelectorAll(".hero-slides .slide");
-  let slideIndex = 0;
+  let index = 0;
 
-  if (slides.length > 1) {
+  if(slides.length > 1){
     slides[0].classList.add("active");
-
-    setInterval(() => {
-      slides[slideIndex].classList.remove("active");
-      slideIndex = (slideIndex + 1) % slides.length;
-      slides[slideIndex].classList.add("active");
-    }, 6000);
+    setInterval(()=>{
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    },6000);
   }
 
-  /* =============================================
-     PORTFOLIO FILTER (SAFE & HALUS)
-  ============================================= */
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const portfolioItems = document.querySelectorAll(".portfolio-item");
+  /* =========================
+     FADE ON SCROLL
+  ========================= */
+  const fades = document.querySelectorAll(".fade");
+  if(fades.length){
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add("show");
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:.15});
+    fades.forEach(el=>obs.observe(el));
+  }
 
-  if (filterButtons.length && portfolioItems.length) {
+  /* =========================
+     PORTFOLIO FILTER
+  ========================= */
+  const buttons = document.querySelectorAll(".filter-btn");
+  const items = document.querySelectorAll(".portfolio-item");
 
-    // tampilkan semua pertama kali
-    portfolioItems.forEach(item => item.classList.add("show"));
+  if(buttons.length && items.length){
+    items.forEach(i=>i.classList.add("show"));
 
-    filterButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-
-        // active button
-        filterButtons.forEach(b => b.classList.remove("active"));
+    buttons.forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        buttons.forEach(b=>b.classList.remove("active"));
         btn.classList.add("active");
 
         const filter = btn.dataset.filter;
 
-        portfolioItems.forEach(item => {
-          const category = item.dataset.category;
-
-          if (filter === "all" || category === filter) {
+        items.forEach(item=>{
+          if(filter==="all" || item.dataset.category===filter){
             item.classList.add("show");
-            item.style.opacity = "0";
-            item.style.transform = "translateY(20px)";
-
-            requestAnimationFrame(() => {
-              item.style.transition = "opacity .4s ease, transform .4s ease";
-              item.style.opacity = "1";
-              item.style.transform = "translateY(0)";
-            });
-
-          } else {
+          }else{
             item.classList.remove("show");
           }
         });
-
       });
     });
   }
 
-  /* =============================================
-     SCROLL FADE ANIMATION
-  ============================================= */
-  const fadeElements = document.querySelectorAll(".fade");
-
-  if (fadeElements.length) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    fadeElements.forEach(el => observer.observe(el));
-  }
-
-  /* =============================================
-     NAVBAR SHRINK ON SCROLL
-  ============================================= */
-  window.addEventListener("scroll", () => {
+  /* =========================
+     NAVBAR SHRINK
+  ========================= */
+  window.addEventListener("scroll",()=>{
     const nav = document.querySelector(".nav");
-    if (!nav) return;
-
-    if (window.scrollY > 60) {
-      nav.classList.add("shrink");
-    } else {
-      nav.classList.remove("shrink");
-    }
+    if(!nav) return;
+    nav.classList.toggle("shrink",window.scrollY>60);
   });
 
 });
 
-/* =================================================
-   HAMBURGER MENU (GLOBAL)
-================================================= */
-function toggleMenu() {
+/* =========================
+   HAMBURGER
+========================= */
+function toggleMenu(){
   const menu = document.getElementById("nav-menu");
-  if (menu) {
-    menu.classList.toggle("active");
-  }
+  if(menu) menu.classList.toggle("active");
 }
-
